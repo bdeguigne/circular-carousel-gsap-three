@@ -13,7 +13,7 @@ const data = [
     title: "Natural caffeine",
     description:
       "This certified organic caffeine comes from the plant. A gift from Mother Nature.",
-    // animationName: "Caffeine",
+    animationName: "Caffeine",
   },
   {
     title: "Antioxidant",
@@ -24,7 +24,7 @@ const data = [
     title: "Vegan",
     description:
       "A plant-based drink that tastes like heaven. Who could ask for more?",
-    // animationName: "Vegan",
+    animationName: "Vegan",
   },
 ];
 
@@ -129,7 +129,7 @@ export function CircularCarousel() {
       </div>
 
       {/* Boutons de navigation */}
-      <div className="absolute top-1/2 right-0 left-0 z-10 flex -translate-y-1/2 transform justify-between px-4 md:px-8 lg:px-16">
+      <div className="absolute left-0 right-0 top-1/2 z-10 flex -translate-y-1/2 transform justify-between px-4 md:px-8 lg:px-16">
         <NavigationButton left onClick={handlePrev} />
         <NavigationButton right onClick={handleNext} />
       </div>

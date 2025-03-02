@@ -33,7 +33,9 @@ export default function Scene() {
   return (
     <View className="pointer-events-none sticky top-0 z-50 -mt-[100vh] h-screen w-screen">
       <group ref={groupRef}>
-        <Float>{/* <SodaCan /> */}</Float>
+        <Float>
+          <SodaCan />
+        </Float>
       </group>
 
       <Environment files="hdr/lobby.hdr" environmentIntensity={1.2} />
