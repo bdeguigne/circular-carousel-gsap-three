@@ -1,0 +1,18 @@
+.circle {
+  top: 50%;
+  left: calc(50% - 225vw);
+  transform-origin: center center;
+}
+
+.card {
+  position: absolute;
+  /* height: 50vh; */
+  left: 50%;
+  /* top: 50%; */
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease;
+  /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); */
+  border-radius: 1rem;
+  overflow: hidden;
+  font-family: "PP Neue Montreal", sans-serif;
+}
