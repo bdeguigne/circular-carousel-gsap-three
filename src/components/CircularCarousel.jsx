@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import Card from "./Card";
 import NavigationButton from "./NavigationButton";
+import { useRotation } from "../context/RotationContext";
 
 const data = [
   {
@@ -76,15 +77,19 @@ export function CircularCarousel() {
     });
   };
 
+  const { handleRotation } = useRotation();
+
   const handlePrev = () => {
     if (!isAnimating) {
       setCurrentRotation((prev) => prev + ROTATION_STEP);
+      handleRotation('left');
     }
   };
 
   const handleNext = () => {
     if (!isAnimating) {
       setCurrentRotation((prev) => prev - ROTATION_STEP);
+      handleRotation('right');
     }
   };
 
@@ -110,7 +115,7 @@ export function CircularCarousel() {
   }, [currentRotation]);
 
   return (
-    <div className="relative h-screen w-full overflow-hidden">
+    <div className="carousel relative h-screen w-full overflow-hidden">
       <div className="absolute inset-0 flex items-center justify-center">
         {carouselItems.length > 0 &&
           carouselItems.map((item, index) => (
@@ -129,7 +134,7 @@ export function CircularCarousel() {
       </div>
 
       {/* Boutons de navigation */}
-      <div className="absolute left-0 right-0 top-1/2 z-10 flex -translate-y-1/2 transform justify-between px-4 md:px-8 lg:px-16">
+      <div className="absolute top-1/2 right-0 left-0 z-10 flex -translate-y-1/2 transform justify-between px-4 md:px-8 lg:px-16">
         <NavigationButton left onClick={handlePrev} />
         <NavigationButton right onClick={handleNext} />
       </div>

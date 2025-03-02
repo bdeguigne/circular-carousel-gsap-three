@@ -4,13 +4,15 @@ import "./index.css";
 import App from "./App.jsx";
 import { ReactLenis } from "lenis/react";
 import Canvas from "./components/3D/Canvas";
+import { RotationProvider } from "./context/RotationContext";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <ReactLenis root>
-      <App />
-
-      <Canvas />
+      <RotationProvider>
+        <App />
+        <Canvas />
+      </RotationProvider>
     </ReactLenis>
   </StrictMode>,
 );

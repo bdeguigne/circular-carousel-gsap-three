@@ -1,13 +1,13 @@
 import "./App.css";
 import { CircularCarousel } from "./components/CircularCarousel";
 import CurvedText from "./components/CurvedText";
-import Scene from "./components/3D/Scene";
+import CanView from "./components/3D/CanView";
 
 function App() {
   return (
     <>
-      {/* <Scene /> */}
-      <div className="flex h-[55vh] flex-col items-center justify-center">
+      <CanView />
+      <div className="curved flex h-[75vh] flex-col items-center justify-center pb-14">
         <CurvedText text="ONLY THE BEST" />
       </div>
       <CircularCarousel />
