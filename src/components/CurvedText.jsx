@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import gsap from "gsap";
 
 export default function CurvedText({ text, fontSize = 12 }) {
-  useEffect(() => {
+  function animateLetters() {
     // Créer un span pour chaque lettre pour l'animation
     const textPath = document.getElementById("textPath");
     if (!textPath) return;
@@ -49,6 +49,10 @@ export default function CurvedText({ text, fontSize = 12 }) {
         ease: "none",
       });
     });
+  }
+
+  useEffect(() => {
+    animateLetters();
   }, [text]);
 
   return (
